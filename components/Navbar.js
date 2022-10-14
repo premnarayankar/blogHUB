@@ -6,11 +6,8 @@ const Navbar = () => {
   return (
     <nav>
       <ul className={styles.nav}>
-        <li
-          className={styles.nav_item}
-          style={{ marginRight: "auto", fontSize: "24px" }}
-        >
-          blog<span style={{ color: "red" }}>HUB</span>
+        <li className={styles.logo}>
+          Andro<span>HUB</span>
         </li>
         <Link href={"/"}>
           <a>
