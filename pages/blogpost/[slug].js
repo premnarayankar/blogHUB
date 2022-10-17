@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { data } from "../blogData/blogList";
+import { data } from "../../blogData/blogList";
 
 const slug = () => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import style from "../styles/Blog.module.css";
-import { data } from "./blogData/blogList";
+import { data } from "../blogData/blogList";
 
 const blog = () => {
   return (
