@@ -1,11 +1,16 @@
 import { useRouter } from "next/router";
-import React from "react";
-import { data } from "../../blogData/blogList";
+import React, { useEffect, useState } from "react";
 
 const slug = () => {
+  const [blog, setBlog] = useState(null);
   const router = useRouter();
   const { slug } = router.query;
-  const blog = data.find((data) => data.title === slug);
+  useEffect(() => {
+    fetch(`http://localhost:3000/api/getBlog?slug=${slug}`)
+      .then((res) => res.json())
+      .then((data) => setBlog(data));
+  }, []);
+
   return (
     <>
       {blog && (
