@@ -1,3 +1,5 @@
+// this is file not useful when do static site  generation
+
 // http://localhost:3000/api/getBlog?slug=react-blog
 
 import * as fs from "fs";

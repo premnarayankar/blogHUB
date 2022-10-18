@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import * as fs from "fs";
 
-const slug = (props) => {
+const Slug = (props) => {
   const [blog, setBlog] = useState(null);
   useEffect(() => {
     setBlog(props.blog);
@@ -18,14 +19,25 @@ const slug = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  // router is not needed for serverside rendering;
-  const slug = context.query.slug;
-  const data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
-  const blog = await data.json();
+export async function getStaticPaths() {
   return {
-    props: { blog },
+    paths: [
+      { params: { slug: "angular-vs-next" } },
+      { params: { slug: "automobile-research" } },
+      { params: { slug: "it-sector-boom" } },
+      { params: { slug: "nasa-mission" } },
+      { params: { slug: "react-blog" } },
+    ],
+    fallback: true,
   };
 }
 
-export default slug;
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  let blog = await fs.promises.readFile(`blogData/${slug}.json`, "utf-8");
+  return {
+    props: { blog: JSON.parse(blog) },
+  };
+}
+
+export default Slug;

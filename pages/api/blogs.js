@@ -1,3 +1,4 @@
+// this is file not useful when do static site  generation
 // http://localhost:3000/api/blogs
 
 import * as fs from "fs";
