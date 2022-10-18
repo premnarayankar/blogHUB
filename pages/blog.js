@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import style from "../styles/Blog.module.css";
 
-const blog = () => {
+const blog = (props) => {
   const [blogList, setBlogList] = useState(null);
-
   useEffect(() => {
-    fetch("http://localhost:3000/api/blogs")
-      .then((res) => res.json())
-      .then((data) => setBlogList(data));
+    props && setBlogList(props.allBlogs);
   }, []);
   return (
     <div className={style.container}>
@@ -26,5 +23,13 @@ const blog = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const data = await fetch("http://localhost:3000/api/blogs");
+  const allBlogs = await data.json();
+  return {
+    props: { allBlogs },
+  };
+}
 
 export default blog;

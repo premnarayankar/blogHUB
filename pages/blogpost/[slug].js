@@ -1,14 +1,9 @@
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
-const slug = () => {
+const slug = (props) => {
   const [blog, setBlog] = useState(null);
-  const router = useRouter();
-  const { slug } = router.query;
   useEffect(() => {
-    fetch(`http://localhost:3000/api/getBlog?slug=${slug}`)
-      .then((res) => res.json())
-      .then((data) => setBlog(data));
+    setBlog(props.blog);
   }, []);
 
   return (
@@ -22,5 +17,15 @@ const slug = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  // router is not needed for serverside rendering;
+  const slug = context.query.slug;
+  const data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
+  const blog = await data.json();
+  return {
+    props: { blog },
+  };
+}
 
 export default slug;
