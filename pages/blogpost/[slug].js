@@ -7,12 +7,17 @@ const Slug = (props) => {
     setBlog(props.blog);
   }, []);
 
+  function createMarkup(c) {
+    return { __html: c };
+  }
+
   return (
     <>
       {blog && (
         <div style={{ textAlign: "center" }}>
           <h1>Title of the page {blog.title}</h1>
           <p>{blog.description}</p>
+          <div dangerouslySetInnerHTML={createMarkup(blog.htmlContent)}></div>
         </div>
       )}
     </>
