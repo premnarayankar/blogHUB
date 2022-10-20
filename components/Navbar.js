@@ -4,7 +4,7 @@ import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="py-2">
       <ul className={styles.nav}>
         <li className={styles.logo}>
           Andro<span>HUB</span>

@@ -10,6 +10,7 @@ const Blog = (props) => {
   }, []);
   return (
     <div className={style.container}>
+      <h1 className="display-1">Blogs</h1>
       {blogList &&
         blogList.map((data) => (
           <div className={style.blogCard} key={data.id}>
