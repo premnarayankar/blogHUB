@@ -14,7 +14,7 @@ const createBlog = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const queryData = fetch("http://localhost:3000/api/createblog", {
+    fetch("http://localhost:3000/api/createblog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
