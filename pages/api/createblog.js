@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       title: title,
       description: description,
       author: author,
-      slug: title.replace(" ", "-"),
+      slug: title.replaceAll(" ", "-"),
     };
     const { slug } = newBlog;
 
