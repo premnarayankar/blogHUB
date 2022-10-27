@@ -26,7 +26,7 @@ function NavbarMain() {
             <Link href={"/about"}>
               <a className="nav-link">About</a>
             </Link>
-            <Link href={"/createblog"}>
+            <Link href={"/Createblog"}>
               <a className="nav-link">Create Blog</a>
             </Link>
             <Link href={"/blog"}>
