@@ -3,26 +3,22 @@ import React from "react";
 const about = () => {
   return (
     <div className="container">
-      <h1 className="display-1 text-center">About us</h1>
+      <h1 className="display-1 text-center my-4">About us</h1>
       <h1 className="display-3 mt-5">Introduction</h1>
       <p className="">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quo
-        repudiandae libero doloremque quas sequi. Suscipit neque dolores, sit
-        obcaecati saepe illum reprehenderit cupiditate iure ratione expedita
-        libero repellat tempora Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Libero, ullam aspernatur architecto sunt tenetur
-        reprehenderit facere fugiat atque? Corporis ducimus minus ea odio sed
-        nam nobis consequuntur dignissimos reiciendis modi!
+        A blog (a truncation of "weblog") is a discussion or informational
+        website published on the World Wide Web consisting of discrete, often
+        informal diary-style text entries (posts). Posts are typically displayed
+        in reverse chronological order so that the most recent post appears
+        first, at the top of the web page.
       </p>
       <h1 className="display-3">Services</h1>
       <p className="">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quo
-        repudiandae libero doloremque quas sequi. Suscipit neque dolores, sit
-        obcaecati saepe illum reprehenderit cupiditate iure ratione expedita
-        libero repellat tempora Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Libero, ullam aspernatur architecto sunt tenetur
-        reprehenderit facere fugiat atque? Corporis ducimus minus ea odio sed
-        nam nobis consequuntur dignissimos reiciendis modi!
+        A blog service is a website that lets you create and maintain a blog. It
+        hosts your blog, which means it gives your blog its own web address, or
+        URL. Your blog service also stores your blog's data. Each blog service
+        has different features, but they all let you share your opinions,
+        interests, photos, and more.
       </p>
     </div>
   );

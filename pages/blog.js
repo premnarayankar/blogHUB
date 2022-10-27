@@ -8,19 +8,24 @@ const Blog = (props) => {
   useEffect(() => {
     props && setBlogList(props.allBlogs);
   }, []);
+
+  const fetchData = () => {};
   return (
-    <div className={style.container}>
-      <h1 className="display-1">Blogs</h1>
+    <div className="container pb-5">
+      <h1 className="display-1 my-4 text-center">Blogs</h1>
       {blogList &&
         blogList.map((data) => (
-          <div className={style.blogCard} key={data.id}>
-            <Link href={`../blogpost/${data.slug}`}>
-              <a>
-                <h2>{data.title}</h2>
-              </a>
-            </Link>
-            <p>{data.description}</p>
-          </div>
+          <Link key={data.id} href={`../blogpost/${data.slug}`}>
+            <div className="card mt-3" style={{ cursor: "pointer" }}>
+              <div className="card-header">{data.title}</div>
+              <div className="card-body">
+                <blockquote className="blockquote mb-0">
+                  <p>{data.description.slice(0, 160)}....</p>
+                  <footer className="blockquote-footer">{data.author}</footer>
+                </blockquote>
+              </div>
+            </div>
+          </Link>
         ))}
     </div>
   );

@@ -14,8 +14,8 @@ const Slug = (props) => {
   return (
     <>
       {blog && (
-        <div style={{ textAlign: "center" }}>
-          <h1>Title of the page {blog.title}</h1>
+        <div className="container">
+          <h1 className="display-1 my-5 text-center">{blog.title}</h1>
           <p>{blog.description}</p>
           <div dangerouslySetInnerHTML={createMarkup(blog.htmlContent)}></div>
         </div>
@@ -26,13 +26,7 @@ const Slug = (props) => {
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      { params: { slug: "angular-vs-next" } },
-      { params: { slug: "automobile-research" } },
-      { params: { slug: "it-sector-boom" } },
-      { params: { slug: "nasa-mission" } },
-      { params: { slug: "react-blog" } },
-    ],
+    paths: [],
     fallback: true,
   };
 }
