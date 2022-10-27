@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const createBlog = () => {
+const CreateBlog = () => {
   const [blogForm, setBlogForm] = useState({
     id: 0,
     title: "",
@@ -86,4 +86,4 @@ const createBlog = () => {
   );
 };
 
-export default createBlog;
+export default CreateBlog;
